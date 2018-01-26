@@ -108,7 +108,7 @@ jstack pid
 ```
 示例
 ```shell
-jstach 5940
+jstack 5940
 Full thread dump Java HotSpot(TM) 64-Bit Server VM (25.92-b14 mixed mode):
 
 "RMI TCP Connection(10)-10.2.13.162" #32 daemon prio=5 os_prio=0 tid=0x00000000179dc000 nid=0x1f60 in Object.wait() [0x000000001d7dd000]
