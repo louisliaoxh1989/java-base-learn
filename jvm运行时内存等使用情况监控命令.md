@@ -61,6 +61,31 @@ FGC — 从应用程序启动到采样时发生 Full GC 的次数
 FGCT– 从应用程序启动到采样时 Full GC 所用的时间(单位秒)
 GCT — 从应用程序启动到采样时用于垃圾回收的总时间(单位秒)
 ```
+其他详细说明
+```
+jstat -class pid:显示加载class的数量，及所占空间等信息。
+
+　　jstat -compiler pid:显示VM实时编译的数量等信息。
+
+　　jstat -gc pid:可以显示gc的信息，查看gc的次数，及时间。其中最后五项，分别是young gc的次数，young gc的时间，full gc的次数，full gc的时间，gc的总时间。
+
+　　jstat -gccapacity:可以显示，VM内存中三代(young,old,perm)对象的使用和占用大小，如：PGCMN显示的是最小perm的内存使用量，PGCMX显示的是perm的内存最大使用量，PGC是当前新生成的perm内存占用量，PC是但前perm内存占用量。其他的可以根据这个类推， OC是old内纯的占用量。
+
+　　jstat -gcnew pid:new对象的信息。
+
+　　jstat -gcnewcapacity pid:new对象的信息及其占用量。
+
+　　jstat -gcold pid:old对象的信息。
+
+　　jstat -gcoldcapacity pid:old对象的信息及其占用量。
+
+　　jstat -gcpermcapacity pid: perm对象的信息及其占用量。
+
+　　jstat -util pid:统计gc信息统计。
+
+　　jstat -printcompilation pid:当前VM执行的信息。
+```
+
 示例
 
 ```shell
@@ -76,4 +101,5 @@ S0     S1     E      O      M     CCS    YGC     YGCT    FGC    FGCT     GCT
 0.00  25.00 100.00  15.37  96.94  94.88     21    0.069     7    0.237    0.306
 0.00  25.00 100.00  15.37  96.94  94.88     21    0.069     7    0.237    0.306
 ```
+
 
