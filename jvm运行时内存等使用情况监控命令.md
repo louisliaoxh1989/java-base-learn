@@ -101,5 +101,41 @@ S0     S1     E      O      M     CCS    YGC     YGCT    FGC    FGCT     GCT
 0.00  25.00 100.00  15.37  96.94  94.88     21    0.069     7    0.237    0.306
 0.00  25.00 100.00  15.37  96.94  94.88     21    0.069     7    0.237    0.306
 ```
+进程所包含线程情况查询_jstack
+------
+```
+jstack pid
+```
+示例
+```shell
+jstach 5940
+Full thread dump Java HotSpot(TM) 64-Bit Server VM (25.92-b14 mixed mode):
 
+"RMI TCP Connection(10)-10.2.13.162" #32 daemon prio=5 os_prio=0 tid=0x00000000179dc000 nid=0x1f60 in Object.wait() [0x000000001d7dd000]
+   java.lang.Thread.State: TIMED_WAITING (on object monitor)
+        at java.lang.Object.wait(Native Method)
+        at com.sun.jmx.remote.internal.ArrayNotificationBuffer.fetchNotifications(ArrayNotificationBuffer.java:449)
+        - locked <0x00000000d462ec18> (a com.sun.jmx.remote.internal.ArrayNotificationBuffer)
+        at com.sun.jmx.remote.internal.ArrayNotificationBuffer$ShareBuffer.fetchNotifications(ArrayNotificationBuffer.java:227)
+        at com.sun.jmx.remote.internal.ServerNotifForwarder.fetchNotifs(ServerNotifForwarder.java:274)
+        at javax.management.remote.rmi.RMIConnectionImpl$4.run(RMIConnectionImpl.java:1270)
+        at javax.management.remote.rmi.RMIConnectionImpl$4.run(RMIConnectionImpl.java:1268)
+        at javax.management.remote.rmi.RMIConnectionImpl.fetchNotifications(RMIConnectionImpl.java:1274)
+        at sun.reflect.GeneratedMethodAccessor59.invoke(Unknown Source)
+        at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+        at java.lang.reflect.Method.invoke(Method.java:498)
+        at sun.rmi.server.UnicastServerRef.dispatch(UnicastServerRef.java:324)
+
+..............
+
+"GC task thread#1 (ParallelGC)" os_prio=0 tid=0x0000000002d10000 nid=0x27dc runnable
+
+"GC task thread#2 (ParallelGC)" os_prio=0 tid=0x0000000002d11800 nid=0x2d84 runnable
+
+"GC task thread#3 (ParallelGC)" os_prio=0 tid=0x0000000002d13800 nid=0x118 runnable
+
+"VM Periodic Task Thread" os_prio=2 tid=0x0000000015ccb000 nid=0x2fd4 waiting on condition
+
+JNI global references: 239
+```
 
