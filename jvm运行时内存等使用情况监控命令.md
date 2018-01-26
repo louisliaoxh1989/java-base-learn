@@ -34,6 +34,8 @@ jmap -heap pid
 jmap -heap 5940
 #可以观察heap中所有对象的情况(heap中所有生存的对象的情况)。包括对象数量和所占空间大小。
 jmap -histo 3409 | jmap -histo:live 3409
+#将VM 中的heap，以二进制输出成文本
+jmap -dump:format=b,file=heap.bin
 
 ```
 实时监测系统资源占用与jvm运行情况_jstat
