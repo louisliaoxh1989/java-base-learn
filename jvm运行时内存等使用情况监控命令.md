@@ -15,6 +15,17 @@ jinfo pid
 #查询某个pid进程对应的应用程序内存占用情况
 jmap -heap pid
 ```
+### 参数
+```
+
+　　-heap ：打印jvm heap的情况
+
+　　-histo： 打印jvm heap的直方图。其输出信息包括类名，对象数量，对象占用大小。
+
+　　-histo：live ： 同上，但是只答应存活对象的情况
+
+　　-permstat： 打印permanent generation heap情况
+```
 
 ```shell
 // 示例
